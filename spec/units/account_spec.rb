@@ -33,7 +33,10 @@ describe Account do
     end
 
     it "can withdraw 50 and then return the balance" do
-      expect(subject.withdraw(20)).to eq(80)
+      test_amount = 20
+      result = money - test_amount
+      
+      expect(subject.withdraw(test_amount)).to eq(result)
     end
 
     it "cannot withdraw more than what's in the bank account" do
