@@ -24,4 +24,25 @@ describe Account do
       subject.deposit(50)
     end
   end
+
+  context '#withdraw' do
+    let(:money) { 100 }
+
+    before do
+      subject.deposit(money)
+    end
+
+    it "can withdraw 50 and then return the balance" do
+      expect(subject.withdraw(20)).to eq(80)
+    end
+
+    it "cannot withdraw more than what's in the bank account" do
+      expect { subject.withdraw(2 * money) }.to raise_error "Not enough funds. Your balance is: £#{money}"
+    end
+
+    it "creates a transaction" do
+      expect(transaction_class_double).to receive(:new).once
+      subject.withdraw(50)
+    end
+  end
 end
