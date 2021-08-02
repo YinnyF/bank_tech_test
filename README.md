@@ -36,3 +36,34 @@ IRB:
 # instructions on how to run tests here. 
 ```
 
+## User Stories
+
+```
+As a client,
+So that I can save money in my bank account, 
+I'd like to be able to deposit money.
+```
+
+```
+As a client,
+So that I can use money from my bank account, 
+I'd like to be able to withdraw money.
+```
+
+```
+As a client,
+So that I know how much money I have, 
+I'd like to be able to print my balance.
+```
+
+```
+As a client,
+So that I can manage my budget,
+I'd like to be able to see transaction dates on my account statement. 
+```
+
+```
+As a client,
+So that I can see the most relevant information first,
+I'd like to see the transactions in reverse chronological order.
+```
