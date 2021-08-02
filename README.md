@@ -67,3 +67,32 @@ As a client,
 So that I can see the most relevant information first,
 I'd like to see the transactions in reverse chronological order.
 ```
+
+## Approach
+
+* I created user stories from the requirements and acceptance criteria.
+
+* I created a functional representation of the user stories in order to help create the class diagrams. 
+<details>
+    <summary>Click to expand</summary>
+
+**Nouns**
+| Nouns | Owner/Property owned? |
+|---|---|
+| Account | Owner |
+| balance (money) | Property owned by Account |
+| date | Property owned by Transaction |
+| Transaction | Owner |
+| transactions | property owned by Account |
+| Statement | Owner |
+| debit/credit (amount) | Property owned by Transaction |
+
+
+**Verbs**
+| Actions | Owned by? | Property it reads/changes? | Property owned by? |
+|---|---|---|---|
+| deposit | Account | balance | Account |
+| withdraw | Account | balance | Account |
+| print_statement | Account | print | Statement |
+
+</details>
