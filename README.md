@@ -74,7 +74,7 @@ I'd like to see the transactions in reverse chronological order.
 
 * I created a functional representation of the user stories in order to help create the class diagrams. 
 <details>
-    <summary>Click to expand</summary>
+    <summary>Click to expand: nouns and verbs table</summary>
 
 **Nouns**
 | Nouns | Owner/Property owned? |
@@ -96,3 +96,8 @@ I'd like to see the transactions in reverse chronological order.
 | print_statement | Account | print | Statement |
 
 </details>
+
+
+* Class diagram:
+
+<img src="classdiagram.png" alt="class diagram" width="600"/>
