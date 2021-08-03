@@ -55,10 +55,7 @@ describe Account do
   end
 
   context "#print_statement" do
-    it "outputs the statement to the console in the correct format" do
-      subject.deposit(50)
-      subject.withdraw(50)
-      allow(statement_double).to receive(:print).and_return("You printed the statement")
+    it "calls print on statement" do
       expect(statement_double).to receive(:print).once
       subject.print_statement
     end
