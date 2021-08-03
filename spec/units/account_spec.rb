@@ -56,6 +56,10 @@ describe Account do
       expect(transaction_class_double).to receive(:new).with(running_balance: 50, debit: 50).once
       subject.withdraw(50)
     end
+
+    it "raises an error when trying to withdraw a negative amount" do
+      expect { subject.withdraw(-100) }.to raise_error "Please enter a valid amount"
+    end
   end
 
   context "#print_statement" do

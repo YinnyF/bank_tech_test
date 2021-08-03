@@ -18,6 +18,7 @@ class Account
   end
 
   def withdraw(amount)
+    check_invalid(amount)
     raise "Not enough funds. Your balance is: £#{@balance}" unless sufficient_funds?(amount)
 
     @balance -= amount
