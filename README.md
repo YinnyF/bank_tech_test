@@ -113,3 +113,5 @@ I'd like to see the transactions in reverse chronological order.
 * Moving onto the third user story; since I have planned to create a `Statement` class, I wrote a test in `account_spec` to check that the `print` method would be called on an instance of `Statement`. 
 
 * Wrote a feature test for printing the statement to guide the creation of Transaction and Statement classes BDD style.
+
+* Working with the `Statement` class, I test drove the creation of the `print` method into the format required.
