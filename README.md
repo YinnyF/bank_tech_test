@@ -24,17 +24,32 @@ date || credit || debit || balance
 
 ## Usage
 
-### How to run program:
-IRB:
+### Set up:
+
 ```
-# instructions on how to run in IRB here.
+bundle install
+```
+
+### How to run program:
+
+In IRB:
+```irb
+require './lib/account.rb'
+account = Account.new
+account.deposit(1000)
+account.withdraw(1000)
+account.print_statement
 ```
 
 ### How to run tests:
 
 ```
-# instructions on how to run tests here. 
+rspec
 ```
+
+### Example:
+
+<img src="images/example.png" alt="example usage" width="600"/>
 
 ## User Stories
 
@@ -68,11 +83,15 @@ So that I can see the most relevant information first,
 I'd like to see the transactions in reverse chronological order.
 ```
 
+## Class Diagram (v2)
+<img src="images/classdiagram2.png" alt="class diagram version 2" width="600"/>
+
+
 ## Approach
 
 * I created user stories from the requirements and acceptance criteria.
 
-* I created a functional representation of the user stories in order to help create the class diagrams. 
+* I created a functional representation of the user stories in order to help create the class diagrams.<br>
 <details>
     <summary>Click to expand: nouns and verbs table</summary>
 
@@ -95,12 +114,11 @@ I'd like to see the transactions in reverse chronological order.
 | withdraw | Account | balance | Account |
 | print_statement | Account | print | Statement |
 
-</details>
+</details><br>
 
+* Class diagram v1:
 
-* Class diagram:
-
-<img src="classdiagram.png" alt="class diagram" width="600"/>
+<img src="images/classdiagram.png" alt="class diagram version 1"/>
 
 * Starting with the first user story, using a TDD approach, I implemented a deposit feature that increases the balance. The deposit method returns the balance. 
 
@@ -125,7 +143,3 @@ I'd like to see the transactions in reverse chronological order.
   * Input negative number for withdrawal
   
 * I discovered that my program could deposit/withdraw penny figures just fine from feature test, however I need to write additional tests to ensure that the input amounts deposited/withdrawn are to two decimal places or less. I implemented the fix by raising an error if the amount given was a fraction of a penny.
-
-## TODO
-- docs: README update Usage instructions
-- docs: README update class diagram
