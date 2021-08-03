@@ -101,3 +101,9 @@ I'd like to see the transactions in reverse chronological order.
 * Class diagram:
 
 <img src="classdiagram.png" alt="class diagram" width="600"/>
+
+* Starting with the first user story, using a TDD approach, I implemented a deposit feature that increases the balance. The deposit method returns the balance. 
+
+* Depositing money creates a transaction, I used dependency injection to inject the Transaction class double.
+
+* Moving on to the second user story, I implemented the withdrawal feature that decreases the balance, but not below 0. The method returns the balance. Withdrawing money creates a transaction. 
