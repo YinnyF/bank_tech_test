@@ -28,6 +28,10 @@ describe Account do
     it "raises an error when trying to deposit a negative amount" do
       expect { subject.deposit(-100) }.to raise_error "Please enter a valid amount"
     end
+
+    it "raises an error when trying to deposit penny fractions" do
+      expect { subject.deposit(0.001) }.to raise_error "Please enter a valid amount"
+    end
   end
 
   context '#withdraw' do
@@ -59,6 +63,10 @@ describe Account do
 
     it "raises an error when trying to withdraw a negative amount" do
       expect { subject.withdraw(-100) }.to raise_error "Please enter a valid amount"
+    end
+
+    it "raises an error when trying to withdraw penny fractions" do
+      expect { subject.withdraw(0.001) }.to raise_error "Please enter a valid amount"
     end
   end
 

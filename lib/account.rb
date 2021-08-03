@@ -49,6 +49,6 @@ class Account
   end
 
   def check_invalid(amount)
-    raise "Please enter a valid amount" if amount.negative?
+    raise "Please enter a valid amount" if amount.negative? || amount * 100 % 1 != 0 
   end
 end
