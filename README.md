@@ -107,3 +107,9 @@ I'd like to see the transactions in reverse chronological order.
 * Depositing money creates a transaction, I used dependency injection to inject the Transaction class double.
 
 * Moving on to the second user story, I implemented the withdrawal feature that decreases the balance, but not below 0. The method returns the balance. Withdrawing money creates a transaction. 
+
+* Wrote a test that fixed a bug where you could not withdraw the exact balance in the account. 
+
+* Moving onto the third user story; since I have planned to create a `Statement` class, I wrote a test in `account_spec` to check that the `print` method would be called on an instance of `Statement`. 
+
+* Wrote a feature test for printing the statement to guide the creation of Transaction and Statement classes BDD style.
