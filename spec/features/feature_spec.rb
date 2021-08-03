@@ -2,12 +2,12 @@ require 'account'
 require 'timecop'
 
 describe 'Bank' do
-  xit 'has an account that you can deposit money' do
+  it 'has an account that you can deposit money' do
     account = Account.new
     expect(account.deposit(50)).to eq 50
   end
 
-  xit 'has an account that you can withdraw money from' do
+  it 'has an account that you can withdraw money from' do
     account = Account.new
     account.deposit(1000)
     expect(account.withdraw(50)).to eq 950
