@@ -19,7 +19,7 @@ class Account
 
   def withdraw(amount)
     check_invalid(amount)
-    raise "Not enough funds. Your balance is: £#{@balance}" unless sufficient_funds?(amount)
+    check_funds(amount)
 
     @balance -= amount
     create_transaction(amount, "debit")
@@ -42,6 +42,10 @@ class Account
 
   def sufficient_funds?(amount)
     @balance >= amount
+  end
+
+  def check_funds(amount)
+    raise "Not enough funds. Your balance is: £#{@balance}" unless sufficient_funds?(amount)
   end
 
   def check_invalid(amount)
