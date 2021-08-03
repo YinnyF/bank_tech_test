@@ -21,7 +21,7 @@ describe Account do
     end
 
     it "creates a transaction" do
-      expect(transaction_class_double).to receive(:new).with(running_balance: 50).once
+      expect(transaction_class_double).to receive(:new).with(running_balance: 50, credit: 50).once
       subject.deposit(50)
     end
   end
@@ -49,7 +49,7 @@ describe Account do
     end
 
     it "creates a transaction" do
-      expect(transaction_class_double).to receive(:new).with(running_balance: 50).once
+      expect(transaction_class_double).to receive(:new).with(running_balance: 50, debit: 50).once
       subject.withdraw(50)
     end
   end

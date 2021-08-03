@@ -11,7 +11,7 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    create_transaction
+    create_transaction(amount, "credit")
     @balance
   end
 
@@ -19,7 +19,7 @@ class Account
     raise "Not enough funds. Your balance is: £#{@balance}" unless sufficient_funds?(amount)
 
     @balance -= amount
-    create_transaction
+    create_transaction(amount, "debit")
     @balance
   end
 
@@ -29,8 +29,12 @@ class Account
 
   private
 
-  def create_transaction
-    @transactions << @transaction_class.new(running_balance: @balance)
+  def create_transaction(amount, type)
+    if type == "credit"
+      @transactions << @transaction_class.new(credit: amount, running_balance: @balance)
+    else
+      @transactions << @transaction_class.new(debit: amount, running_balance: @balance)
+    end
   end
 
   def sufficient_funds?(amount)
