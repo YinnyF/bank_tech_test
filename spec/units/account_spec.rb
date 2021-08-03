@@ -4,7 +4,7 @@ describe Account do
   let(:transaction_class_double) { double(:Transaction) }
   let(:transaction_double) { double(:transaction) }
   let(:statement_double) { double(:statement) }
-  subject { described_class.new(transaction_class_double) }
+  subject { described_class.new(transaction_class_double, statement_double) }
 
   before do
     allow(transaction_class_double).to receive(:new).and_return(transaction_double)
@@ -54,13 +54,13 @@ describe Account do
     end
   end
 
-  # context "#print_statement" do
-  #   xit "outputs the statement to the console in the correct format" do
-  #     subject.deposit(50)
-  #     subject.withdraw(50)
-  #     allow(statement_double).to receive(:print).and_return("You printed the statement")
-  #     expect(statement_double).to receive(:print).once
-  #     subject.print_statement
-  #   end
-  # end
+  context "#print_statement" do
+    it "outputs the statement to the console in the correct format" do
+      subject.deposit(50)
+      subject.withdraw(50)
+      allow(statement_double).to receive(:print).and_return("You printed the statement")
+      expect(statement_double).to receive(:print).once
+      subject.print_statement
+    end
+  end
 end

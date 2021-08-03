@@ -1,9 +1,11 @@
 require 'transaction'
+require 'statement'
 
 class Account
-  def initialize(transaction_class = Transaction)
+  def initialize(transaction_class = Transaction, statement = Statement.new)
     @balance = 0
     @transaction_class = transaction_class
+    @statement = statement
   end
 
   def deposit(amount)
@@ -16,6 +18,10 @@ class Account
 
     create_transaction
     @balance -= amount
+  end
+
+  def print_statement
+    @statement.print
   end
 
   private
