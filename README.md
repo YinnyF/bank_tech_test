@@ -115,3 +115,5 @@ I'd like to see the transactions in reverse chronological order.
 * Wrote a feature test for printing the statement to guide the creation of Transaction and Statement classes BDD style.
 
 * Working with the `Statement` class, I test drove the creation of the `print` method into the format required.
+
+- Edge Cases: Input negative number for deposit. Input negative number for withdrawal.
