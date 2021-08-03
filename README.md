@@ -120,11 +120,13 @@ I'd like to see the transactions in reverse chronological order.
 
 * Circling back to the feature tests, my tests were now failing due to the wrong arguments given to initialise new transactions (debit and credit amounts were not being passed to the transaction). I replicated the failure in the unit test and then implemented the change to make them pass.
 
+* Considering more edge cases:
+  * Input negative number for deposit
+  * Input negative number for withdrawal
+
 ## TODO
 
 - tests/feat: Edge Cases 
-  - Input negative number for deposit
-  - Input negative number for withdrawal
   - Depositing/withdrawing pennies (2 d.p. float)
 - docs: README update Usage instructions
 - docs: README update class diagram
