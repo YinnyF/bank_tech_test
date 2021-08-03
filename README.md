@@ -123,10 +123,9 @@ I'd like to see the transactions in reverse chronological order.
 * Considering more edge cases:
   * Input negative number for deposit
   * Input negative number for withdrawal
+  
+* I discovered that my program could deposit/withdraw penny figures just fine from feature test, however I need to write additional tests to ensure that the input amounts deposited/withdrawn are to two decimal places or less. I implemented the fix by raising an error if the amount given was a fraction of a penny.
 
 ## TODO
-
-- tests/feat: Edge Cases 
-  - Depositing/withdrawing pennies (2 d.p. float)
 - docs: README update Usage instructions
 - docs: README update class diagram
