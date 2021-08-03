@@ -114,8 +114,17 @@ I'd like to see the transactions in reverse chronological order.
 
 * Wrote a feature test for printing the statement to guide the creation of Transaction and Statement classes BDD style.
 
-* Working with the `Statement` class, I test drove the creation of the `print` method into the format required.
+* Working with the `Statement` class, I test drove the creation of the `print` method into the format required. Taking into account the 4th & 5th user story, the transactions are ordered into reverse chronological order before being 'printed'.
 
 * Working with the `Transactions` class, I test drove the attributes that are required by the other classes. Using the `timecop` gem, I was able to test that the date is stored when a transaction is created. 
 
-- Edge Cases: Input negative number for deposit. Input negative number for withdrawal. Depositing/withdrawing pennies. 
+* Circling back to the feature tests, my tests were now failing due to the wrong arguments given to initialise new transactions (debit and credit amounts were not being passed to the transaction). I replicated the failure in the unit test and then implemented the change to make them pass.
+
+## TODO
+
+- tests/feat: Edge Cases 
+  - Input negative number for deposit
+  - Input negative number for withdrawal
+  - Depositing/withdrawing pennies (2 d.p. float)
+- docs: README update Usage instructions
+- docs: README update class diagram
