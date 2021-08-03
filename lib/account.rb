@@ -1,5 +1,5 @@
-require 'transaction'
-require 'statement'
+require_relative 'transaction'
+require_relative 'statement'
 
 class Account
   def initialize(transaction_class = Transaction, statement = Statement.new)
@@ -28,6 +28,7 @@ class Account
 
   def print_statement
     @statement.print(@transactions)
+    return nil
   end
 
   private
