@@ -10,6 +10,8 @@ class Account
   end
 
   def deposit(amount)
+    check_invalid(amount)
+
     @balance += amount
     create_transaction(amount, "credit")
     @balance
@@ -39,5 +41,9 @@ class Account
 
   def sufficient_funds?(amount)
     @balance >= amount
+  end
+
+  def check_invalid(amount)
+    raise "Please enter a valid amount" if amount.negative?
   end
 end
