@@ -25,6 +25,6 @@ class Account
   end
 
   def sufficient_funds?(amount)
-    @balance > amount
+    @balance >= amount
   end
 end

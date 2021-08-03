@@ -3,6 +3,7 @@ require 'account'
 describe Account do
   let(:transaction_class_double) { double(:Transaction) }
   let(:transaction_double) { double(:transaction) }
+  let(:statement_double) { double(:statement) }
   subject { described_class.new(transaction_class_double) }
 
   before do
@@ -43,9 +44,23 @@ describe Account do
       expect { subject.withdraw(2 * money) }.to raise_error "Not enough funds. Your balance is: £#{money}"
     end
 
+    it "can withdraw the full balance in the account" do
+      expect { subject.withdraw(money) }.not_to raise_error "Not enough funds. Your balance is: £#{money}"
+    end
+
     it "creates a transaction" do
       expect(transaction_class_double).to receive(:new).once
       subject.withdraw(50)
     end
   end
+
+  # context "#print_statement" do
+  #   xit "outputs the statement to the console in the correct format" do
+  #     subject.deposit(50)
+  #     subject.withdraw(50)
+  #     allow(statement_double).to receive(:print).and_return("You printed the statement")
+  #     expect(statement_double).to receive(:print).once
+  #     subject.print_statement
+  #   end
+  # end
 end
