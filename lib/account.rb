@@ -6,6 +6,7 @@ class Account
     @balance = 0
     @transaction_class = transaction_class
     @statement = statement
+    @transactions = []
   end
 
   def deposit(amount)
@@ -21,13 +22,13 @@ class Account
   end
 
   def print_statement
-    @statement.print
+    @statement.print(@transactions)
   end
 
   private
 
   def create_transaction
-    @transaction_class.new
+    @transactions << @transaction_class.new
   end
 
   def sufficient_funds?(amount)

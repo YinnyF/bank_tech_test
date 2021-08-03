@@ -59,5 +59,13 @@ describe Account do
       expect(statement_double).to receive(:print).once
       subject.print_statement
     end
+
+    it "gives an array of transactions to print" do
+      subject.deposit(50)
+      subject.withdraw(50)
+      allow(statement_double).to receive(:print).with([transaction_double, transaction_double])
+      expect(statement_double).to receive(:print).once
+      subject.print_statement
+    end
   end
 end
