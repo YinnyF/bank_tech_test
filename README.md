@@ -116,4 +116,4 @@ I'd like to see the transactions in reverse chronological order.
 
 * Working with the `Statement` class, I test drove the creation of the `print` method into the format required.
 
-- Edge Cases: Input negative number for deposit. Input negative number for withdrawal.
+- Edge Cases: Input negative number for deposit. Input negative number for withdrawal. Depositing/withdrawing pennies. 
