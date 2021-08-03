@@ -45,7 +45,7 @@ describe Account do
     end
 
     it "can withdraw the full balance in the account" do
-      expect { subject.withdraw(money) }.not_to raise_error "Not enough funds. Your balance is: £#{money}"
+      expect(subject.withdraw(money)).to eq 0
     end
 
     it "creates a transaction" do
