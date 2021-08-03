@@ -116,4 +116,6 @@ I'd like to see the transactions in reverse chronological order.
 
 * Working with the `Statement` class, I test drove the creation of the `print` method into the format required.
 
+* Working with the `Transactions` class, I test drove the attributes that are required by the other classes. Using the `timecop` gem, I was able to test that the date is stored when a transaction is created. 
+
 - Edge Cases: Input negative number for deposit. Input negative number for withdrawal. Depositing/withdrawing pennies. 
