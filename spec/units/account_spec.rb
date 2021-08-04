@@ -12,12 +12,13 @@ describe Account do
 
   context '#deposit' do
     it "can deposit 50 then return the balance" do
-      expect(subject.deposit(50)).to eq(50)
+      subject.deposit(50)
+      expect(subject.balance).to eq(50)
     end 
 
     it "can deposit multiple times" do
-      4.times { subject.deposit(50) }
-      expect(subject.deposit(50)).to eq(250)
+      5.times { subject.deposit(50) }
+      expect(subject.balance).to eq(250)
     end
 
     it "creates a transaction" do
@@ -44,8 +45,8 @@ describe Account do
     it "can withdraw 50 and then return the balance" do
       test_amount = 20
       result = money - test_amount
-      
-      expect(subject.withdraw(test_amount)).to eq(result)
+      subject.withdraw(test_amount)
+      expect(subject.balance).to eq(result)
     end
 
     it "cannot withdraw more than what's in the bank account" do
@@ -53,7 +54,8 @@ describe Account do
     end
 
     it "can withdraw the full balance in the account" do
-      expect(subject.withdraw(money)).to eq 0
+      subject.withdraw(money)
+      expect(subject.balance).to eq 0
     end
 
     it "creates a transaction" do

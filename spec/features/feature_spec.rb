@@ -4,13 +4,15 @@ require 'timecop'
 describe 'Bank' do
   it 'has an account that you can deposit money' do
     account = Account.new
-    expect(account.deposit(50)).to eq 50
+    account.deposit(50)
+    expect(account.balance).to eq 50
   end
 
   it 'has an account that you can withdraw money from' do
     account = Account.new
     account.deposit(1000)
-    expect(account.withdraw(50)).to eq 950
+    account.withdraw(50)
+    expect(account.balance).to eq 950
   end
 
   it "can print the statement" do
@@ -34,13 +36,15 @@ describe 'Bank' do
 
   it 'has an account that you can deposit pennies' do
     account = Account.new
-    expect(account.deposit(0.01)).to eq 0.01
+    account.deposit(0.01)
+    expect(account.balance).to eq 0.01
   end
 
   it 'has an account that you can withdraw a penny from' do
     account = Account.new
     account.deposit(1000)
-    expect(account.withdraw(0.01)).to eq 999.99
+    account.withdraw(0.01)
+    expect(account.balance).to eq 999.99
   end
   
 end

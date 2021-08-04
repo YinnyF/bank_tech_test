@@ -2,6 +2,8 @@ require_relative 'transaction'
 require_relative 'statement'
 
 class Account
+  attr_reader :balance
+
   def initialize(transaction_class = Transaction, statement = Statement.new)
     @balance = 0
     @transaction_class = transaction_class
@@ -14,7 +16,7 @@ class Account
 
     @balance += amount
     create_transaction(amount, "credit")
-    @balance
+    return nil
   end
 
   def withdraw(amount)
@@ -23,7 +25,7 @@ class Account
 
     @balance -= amount
     create_transaction(amount, "debit")
-    @balance
+    return nil
   end
 
   def print_statement
