@@ -10,7 +10,7 @@ describe Account do
     allow(transaction_class_double).to receive(:new).and_return(transaction_double)
   end
 
-  context '#deposit' do
+  describe '#deposit' do
     it "can deposit 50 then return the balance" do
       subject.deposit(50)
       expect(subject.balance).to eq(50)
@@ -35,7 +35,7 @@ describe Account do
     end
   end
 
-  context '#withdraw' do
+  describe '#withdraw' do
     let(:money) { 100 }
 
     before do
@@ -72,7 +72,7 @@ describe Account do
     end
   end
 
-  context "#print_statement" do
+  describe "#print_statement" do
     it "calls print on statement" do
       expect(statement_double).to receive(:print).once
       subject.print_statement
