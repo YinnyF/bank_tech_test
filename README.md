@@ -143,3 +143,5 @@ I'd like to see the transactions in reverse chronological order.
   * Input negative number for withdrawal
   
 * I discovered that my program could deposit/withdraw penny figures just fine from feature test, however I need to write additional tests to ensure that the input amounts deposited/withdrawn are to two decimal places or less. I implemented the fix by raising an error if the amount given was a fraction of a penny.
+
+* Having received feedback from a Makers Coach, I refactored my tests and code to use a `.balance` attr_reader, in order to avoid testing the return value of `subject.deposit` and `subject.withdraw`.
